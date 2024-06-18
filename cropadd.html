@@ -1,0 +1,8 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="cropname">Crop Name:</label><br>
+    <input type="text" name="cropname" required>
+    <br>
+<br>
+    <input type="submit" value="Add">
+</form>

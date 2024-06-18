@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Index - HAEGL KRUSHI </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/media/assets/img/favicon.png" rel="icon">
+  <link href="/media/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/media/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/media/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/media/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/media/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/media/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/media/assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: HeroBiz
+  * Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
+  * Updated: Jun 06 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <style>
+      .card {
+          background-color: white;
+          border-radius: 15px;
+          padding: 15px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          text-align: center;
+      }
+      .card img {
+          border-radius: 10px;
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+          display: block;
+          margin: 0 auto;
+      }
+      .add-to-cart-btn {
+            background-color: #0c663c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-decoration: none; /* Ensure text-decoration is none for anchor tag styled as button */
+            display: inline-block; /* Inline-block to behave like a button */
+            margin-top: 10px; /* Space above the button */
+        }
+        .add-to-cart-btn:hover {
+            background-color: #0ea2bd;
+        }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="/media/assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">HaeglKrushi</h1>
+        <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home<br></a></li>
+          <li><a href="#hero" >Library<br></a></li>
+          <li><a href="#about">How it works</a></li>
+          <li><a href="#services">Buyer Benefits</a></li>
+            <li><a href="#features">Products</a></li>
+
+
+          <li class="dropdown"><a href="#"><span>Crops</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              {% for x in cropdata %}
+              <li><a href="item/{{x.id}}">{{x.crop}}</a></li>
+              {% endfor %}
+
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      {% if user %}
+      <a class="btn-getstarted" href="#">Hi,{{ user.username }}</a>
+      <a class="btn-getstarted" href="/logout">Logout</a>
+
+   {% else %}
+      <a class="btn-getstarted" href="#">Hi,Guest</a>
+      <a class="btn-getstarted" href="/login">Login</a>
+   {% endif %}
+
+
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" data-aos="zoom-out">
+
+        <h1><strong>#1 FREE  <span>app for crop diagnosis and treatments</strong></span></h1>
+        <p>HaeglKrushi helps farmers diagnose and treat crop problems, improve productivity and provide farming knowledge. Achieve your farming goals and improve your agricultural experience with HAEGL.</p>
+        <div class="d-flex">
+          <a href="#about" class="btn-get-started scrollto">Get Started</a>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Hero Section -->
+<section id="service-details" class="service-details section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+
+
+          <div class="col-lg-8 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+            <img src="/media/assets/img/try2.png" alt="" class="img-fluid services-img">
+            <h3>Diagnose your sick crop</h3>
+            <p>
+              Take a photo of your sick crop and get a free diagnosis and treatment suggestions – all in a few seconds!
+            </p>
+
+          </div>
+ <div class="col-lg-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+            <img src="/media/assets/img/HaeglKrushi.png" alt="" class="img-fluid services-img">
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- Featured Services Section -->
+
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>How it works</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="row g-4 g-lg-5" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-5">
+            <div class="about-img">
+              <img src="/media/assets/img/test2.gif" class="img-fluid" alt="">
+            </div>
+          </div>
+
+          <div class="col-lg-7">
+            <h3 class="pt-0 pt-lg-5">Identify and cure plant diseases with KRUSHI</h3>
+
+            <!-- Tabs -->
+            <ul class="nav nav-pills mb-3">
+              <li><a class="nav-link active" data-bs-toggle="pill" href="#about-tab1">Identify Disease</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#about-tab2">Right Treatment</a></li>
+              <li><a class="nav-link" data-bs-toggle="pill" href="#about-tab3">Get expert advice</a></li>
+            </ul><!-- End Tabs -->
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+
+              <div class="tab-pane fade show active" id="about-tab1">
+
+                <p class="fst-italic">Quick and Accurate Diagnosis</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Quick and Accurate Diagnosis</h4>
+                </div>
+                <p>Upload a photo of the affected crop and receive an instant diagnosis. Our advanced AI analyzes the image to detect signs of disease, identifying the issue within seconds.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Comprehensive Disease Database</h4>
+                </div>
+                <p>Access a vast database of common crop diseases. Each entry includes symptoms, images, and detailed descriptions to help you understand what might be affecting your plants.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Easy-to-Use Interface</h4>
+                </div>
+                <p>Our user-friendly design ensures that you can quickly and easily upload images and receive results. Whether you're a seasoned farmer or a gardening novice, our app is intuitive and straightforward.</p>
+
+              </div><!-- End Tab 1 Content -->
+
+              <div class="tab-pane fade" id="about-tab2">
+
+                <p class="fst-italic">Tailored Recommendations</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Tailored Recommendations</h4>
+                </div>
+                <p>Receive customized treatment plans based on the diagnosed disease. Our recommendations include specific pesticides, fungicides, or organic treatments tailored to your crop and disease.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Step-by-Step Guides</h4>
+                </div>
+                <p>Follow detailed instructions on how to apply treatments effectively. Our guides cover dosage, application methods, and safety precautions to ensure optimal results and minimize harm to your crops and the environment.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Prevention Tips</h4>
+                </div>
+                <p>Learn how to prevent future outbreaks with expert advice on crop rotation, soil health, and other proactive measures. Implementing these tips can help maintain the health of your crops and reduce the likelihood of disease recurrence.</p>
+
+              </div><!-- End Tab 2 Content -->
+
+              <div class="tab-pane fade" id="about-tab3">
+
+                <p class="fst-italic">Get Expert Advice</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Connect with Agronomists</h4>
+                </div>
+                <p>Get in touch with professional agronomists for personalized advice. Our network of experts can provide insights and solutions tailored to your specific farming conditions and challenges.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Community Support</h4>
+                </div>
+                <p>Join our online community of farmers and gardeners. Share your experiences, ask questions, and learn from others who have faced similar issues. Our forums and social media groups are great places to find support and advice.</p>
+
+                <div class="d-flex align-items-center mt-4">
+                  <i class="bi bi-check2"></i>
+                  <h4>Ongoing Education</h4>
+                </div>
+                <p>Stay informed with articles, webinars, and updates from agricultural experts. We provide resources on the latest research, emerging diseases, and innovative farming practices to keep you ahead of the curve.</p>
+
+              </div><!-- End Tab 3 Content -->
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+	 <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Krushi in Numbers</h2>
+        <p>As the most visited ag-tech web app, Krushi has answered more than 50000 crop-related questions from farmers.</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/media/assets/img/t2.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+
+                <h4>1.7 sec</h4>
+                <span>Get your crop diagnosed in 1.7 sec.</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="400">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/media/assets/img/t3.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+
+                <h4>10</h4>
+                <span>You'll be able to detect 10 different kinds of crops!</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/media/assets/img/t4.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+
+                <h4>100+</h4>
+                <span>Find the right treatment for more than 100 diseases.</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+		  <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-in" data-aos-delay="600">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/media/assets/img/t5.png" class="img-fluid" alt="">
+              </div>
+              <div class="member-info">
+
+                <h4>250+</h4>
+                <span>Farmers report an improvement in their farming of 70%.</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Team Section -->
+
+
+
+    <!-- Call To Action Section -->
+    <section id="call-to-action" class="call-to-action section">
+
+      <div class="container" data-aos="zoom-out">
+
+        <div class="row g-5">
+
+          <div class="col-lg-8 col-md-6 content d-flex flex-column justify-content-center order-last order-md-first">
+            <h3>Join the  online farming community in India and expand your business digitally. </h3>
+
+            <a class="cta-btn align-self-start" href="#">Register</a>
+          </div>
+
+          <div class="col-lg-4 col-md-6 order-first order-md-last d-flex align-items-center">
+            <div class="img">
+              <img src="/media/assets/img/up9.png" alt="" class="img-fluid">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Call To Action Section -->
+
+
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="service-item">
+              <div class="img">
+                <img src="/media/assets/img/t6.png" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-activity"></i>
+                </div>
+                <a href="service-details.html" class="stretched-link">
+                  <h3>Facilitate Direct Connections</h3>
+                </a>
+               <p>We enable direct communication and transactions between buyers and farmers, ensuring fair prices and fresh produce.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="service-item">
+              <div class="img">
+                <img src="/media/assets/img/t7.png" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-broadcast"></i>
+                </div>
+                <a href="service-details.html" class="stretched-link">
+                  <h3>Ensure Quality and Transparency</h3>
+                </a>
+               <p>We provide detailed information about farms and their practices, helping buyers make informed purchasing decisions.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+            <div class="service-item">
+              <div class="img">
+                <img src="/media/assets/img/t8.png" class="img-fluid" alt="">
+              </div>
+              <div class="details position-relative">
+                <div class="icon">
+                  <i class="bi bi-easel"></i>
+                </div>
+                <a href="service-details.html" class="stretched-link">
+                  <h3>Support Sustainable Agriculture</h3>
+                </a>
+                <p>We promote sustainable farming by connecting buyers with farmers who prioritize environmentally friendly practices.</p>
+              </div>
+            </div>
+          </div><!-- End Service Item -->
+
+
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+
+
+
+<!-- product tabs 1 -->
+<section id="features" class="features section">
+        <div class="container section-title aos-init aos-animate" data-aos="fade-up">
+            <h2>Krushi Products</h2>
+            <p>Find the best product deals from your local retailers.</p>
+        </div>
+
+        <div class="container aos-init aos-animate" data-aos="fade-up">
+            <!-- Tabs navigation -->
+            <ul class="nav nav-tabs row gy-4 d-flex" role="tablist">
+                {% for category in productcat %}
+                <li class="nav-item col-6 col-md-4 col-lg-2" role="presentation">
+                    <a class="nav-link {% if forloop.first %}active{% endif %}" data-bs-toggle="tab" href="#category-{{ category.id }}" aria-selected="true" role="tab">
+                        <i class="bi bi-binoculars" style="color: #0dcaf0;"></i>
+                        <h4>{{ category.name }}</h4>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <!-- Tabs content -->
+            <div class="tab-content">
+                {% for category in productcat %}
+                <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="category-{{ category.id }}" role="tabpanel">
+                    <div class="row gy-5">
+                        {% for product in products %}
+                            {% if product.category.id == category.id %}
+                            <div class="col-xl-3 col-md-6 d-flex aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="member-img">
+                                            <img src="/media/{{product.image}}" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="member-info">
+                                            <strong><p>{{ product.name }}</p>  </strong>
+                                            <p>By: {{ product.added_by.last_name }}</p>
+                                            <p>Price: {{ product.price }}</p>
+                                           <a href="#" class="add-to-cart-btn">Contact</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+
+      <div class="container-fluid">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+
+            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+
+            </div>
+
+            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+
+
+              {% for x in faqs %}
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>{{x.question}}</h3>
+                <div class="faq-content">
+                  <p>{{x.answer}}</p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+              {% endfor %}
+
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="/media/assets/img/faq.jpg" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>HAEGL TECHNOLOGIES PVT LTD</p>
+      </div><!-- End Section Title -->
+
+      <div class="mb-5">
+        <iframe style="width: 100%; height: 400px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15388.920739673284!2d75.1253094!3d15.3640151!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d78abedde6cd%3A0xe6bcb8796e0ff074!2sHAEGL%20ACADEMY!5e0!3m2!1sen!2sin!4v1718344710555!5m2!1sen!2sin" frameborder="0" allowfullscreen=""></iframe>
+      </div><!-- End Google Maps -->
+
+      <div class="container" data-aos="fade">
+
+        <div class="row gy-5 gx-lg-5">
+
+          <div class="col-lg-4">
+
+            <div class="info">
+              <h3>Get in touch</h3>
+              <p>HAEGL TECHNOLOGIES PVT LTD.</p>
+
+              <div class="info-item d-flex">
+                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                <div>
+                  <h4>Location:</h4>
+                  <p>Akalwadi Complex Vidyanagar Hubli -31</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-envelope flex-shrink-0"></i>
+                <div>
+                  <h4>Email:</h4>
+                  <p>info@haegl.in</p>
+                </div>
+              </div><!-- End Info Item -->
+
+              <div class="info-item d-flex">
+                <i class="bi bi-phone flex-shrink-0"></i>
+                <div>
+                  <h4>Call:</h4>
+                  <p>+91 76763 48382</p>
+                </div>
+              </div><!-- End Info Item -->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required="">
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" placeholder="Message" required=""></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <span class="sitename">HaeglKrushi</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>Akalwadi Complex</p>
+              <p>Vidyanagar, Hubballi -31</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+91 76763 48382</span></p>
+              <p><strong>Email:</strong> <span>info@haegl.in</span></p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#about">How it works</a></li>
+              <li><a href="#services">Buyer Benefits</a></li>
+              <li><a href="#contact">contact Us</a></li>
+              <li><a href="#features">Krushi Products</a></li>
+            </ul>
+          </div>
+
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div>
+            © Copyright <strong><span>MyWebsite</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+            <!-- All the links in the footer should remain intact. -->
+            <!-- You can delete the links only if you purchased the pro version. -->
+            <!-- Licensing information: https://bootstrapmade.com/license/ -->
+            <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/herobiz-bootstrap-business-template/ -->
+            Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          </div>
+        </div>
+
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/media/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/media/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/media/assets/vendor/aos/aos.js"></script>
+  <script src="/media/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/media/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="/media/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/media/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/media/assets/js/main.js"></script>
+
+</body>
+
+</html>
